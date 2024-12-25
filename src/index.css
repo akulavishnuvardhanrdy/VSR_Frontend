@@ -1,0 +1,284 @@
+/* Include Caveat Font */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jacquard+24+Charted&family=Jersey+25+Charted&family=Pacifico&display=swap');
+
+
+/* Applied to all elements */
+*{
+    box-sizing: border-box;    
+}
+
+
+/* Introduction part */
+.intro{
+    background-color: #2D2B2A;
+}
+
+
+/* Carousel CSS properties */
+.carousel-img{
+    height: 70vh;
+    width: 100vh;
+}
+.hotel-img{
+    background-image: url("assets/Images/Hotel_home.png");
+    background-size: 100% 100%;
+}
+.aeroplane-img{
+    background-image: url('assets/Images/Aeroplane_home.png');
+    background-size: 100% 100%;
+}
+.bus-img{
+    background-image: url('assets/Images/Bus_home.png');
+    background-size: 100% 100%;
+}
+.train-img{
+    background-image: url('assets/Images/Train_home.png');
+    background-size: 100% 100%;
+}
+/* For Responsive Carousel */
+@media only screen and (min-width: 100px) {
+    .carousel-inner {
+      height: 260px;
+    }
+    .carousel-inner .carousel-img{
+        height: 260px;
+        width:100vw;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .carousel-inner {
+      height: 420px;
+    }
+    .carousel-inner .carousel-img{
+        height: 420px;
+        width: 100vw;
+    }
+}
+
+/* CSS properties for the Navigation Bar */
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200px;
+}
+.list {
+  padding-top: 30px;
+  color:#74ecff;
+  font-family: Caveat;
+  font-size: 30px;
+}
+
+.list ul li {
+  position: relative;
+  left: 0;
+  
+  list-style: none;
+  margin: 4px 0;
+  border-left: 2px solid #f50057;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.list ul li:hover {
+  left: 10px;
+}
+.list ul li span {
+  position: relative;
+  padding: 8px;
+  padding-left: 12px;
+  display: inline-block;
+  color: #fce4ec;
+}
+.list ul li:hover span {
+  color: #111;
+}
+.list ul li:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f50057;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.5s;
+}
+.list ul li:hover:before {
+  transform: scaleX(1);
+}
+
+/* Wave CSS code */
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.wave .wave1 {
+    position: relative;
+    display: block;
+    width: calc(156% + 1.3px);
+    height: 119px;
+    transform: rotateY(180deg);
+}
+.wave .shape-fill {
+    fill: #2D2B2A;
+}
+.wave .wave2 {
+    position: relative;
+    display: block;
+    width: calc(284% + 1.3px);
+    height: 79px;
+    transform: rotateY(180deg);
+}
+.wave .wave2 .shape-fill {
+    fill: #DCF3F3;
+}
+.wave .wave3 {
+    position: relative;
+    display: block;
+    width: calc(124% + 1.3px);
+    height: 73px;
+}
+.wave .wave3 .shape-fill {
+    fill:  #F2F7E4;
+}
+.wave .wave4 {
+    position: relative;
+    display: block;
+    width: calc(113% + 1.3px);
+    height: 124px;
+    transform: rotateY(180deg);
+}
+.wave .wave4 .shape-fill {
+    fill:  #C2CECB;
+}
+/* For Responsive waves */
+@media (max-width: 767px) {
+    .wave .wave1 {
+        width: calc(295% + 1.3px);
+        height: 31px;
+    }
+    .wave .wave2 {
+        width: calc(121% + 1.3px);
+        height: 43px;
+    }
+    .wave .wave3 {
+        width: calc(100% + 1.3px);
+        height: 30px;
+    }
+    .wave .wave4 {
+        width: calc(118% + 1.3px);
+        height: 57px;
+    }
+}
+
+
+/* CSS properties for the div elemnts */
+.home-div{
+    padding:0px 20px 0px 20px;
+}
+.card-heading{
+    font-size: 30px;
+    font-family: Courier;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.card-sub-heading{
+    font-size:22px;
+    font-family: 'Courier New';
+    font-style: italic;
+    font-weight: bold;
+}
+.card-desc{
+    font-size: 18px;
+    font-family: georgia;
+    color: gray;
+    text-indent: 40px;
+}
+.card-img-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+.card-div-img{
+    height: 180px;
+    width: 290px;
+    border-radius: 50%;
+}
+.card-div-img:hover{
+    height: 200px;
+    width: 310px;
+    padding: 3px;
+}
+.card-bottom{
+    font-size: 17px;
+    padding-top: 15px;
+    color: #282828;
+}
+.last-price{
+    text-decoration: line-through;
+    font-size: 12px;
+    color: grey;
+}
+.offer{
+    color: green;
+    font-weight: bold;
+}
+.card-img-card-img{
+    height: 35px;
+    width: 35px;
+}
+.card-button{
+    background-color: transparent;
+    border: 1px solid green;
+    color: green;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.card-button:hover{
+    background-color: green;
+    color: white;
+    border:none;
+    padding: 7px 13px;
+}
+
+/* Contact us Properties */
+.about{
+    background-color: black ;
+    padding: 20px;
+    color: gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.about h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    color: gray;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Form CSS Properties */
+.form-heading{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.form-para{
+    font-size:15px;
+    color: rgb(51, 48, 48);
+}
+.form-background{
+    background-image: url(Images/Form-Background.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-sub-heading{
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+}
