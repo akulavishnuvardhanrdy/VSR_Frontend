@@ -1,0 +1,26 @@
+/* Wave CSS code */
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.wave .wave1 {
+    position: relative;
+    display: block;
+    width: calc(156% + 1.3px);
+    height: 119px;
+    transform: rotateY(180deg);
+}
+.wave .shape-fill {
+    fill: #2D2B2A;
+}
+/* For Responsive waves */
+@media (max-width: 767px) {
+    .wave .wave1 {
+        width: calc(295% + 1.3px);
+        height: 31px;
+    }
+}
