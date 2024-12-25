@@ -1,12 +1,13 @@
 import './App.css'
-import './Carousal'
 import Carousal from './Carousal'
+import Sidebar  from './SideBar'
 
 function App() {
 
   return (
     <>
       <Carousal/>
+      <Sidebar/>
     </>
   )
 }
