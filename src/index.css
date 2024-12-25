@@ -156,19 +156,6 @@
 }
 
 /* Contact us Properties */
-.about{
-    background-color: black ;
-    padding: 20px;
-    color: gray;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.about h1{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 25px;
-    color: gray;
-    font-weight: bold;
-    text-decoration: underline;
-}
 
 /* Form CSS Properties */
 .form-heading{
