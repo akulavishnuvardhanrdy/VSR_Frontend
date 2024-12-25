@@ -1,3 +1,5 @@
+import './CSS/Carousal.css'
+
 const Carousal = () => {
     return (
         <section>

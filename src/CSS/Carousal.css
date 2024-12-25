@@ -1,0 +1,40 @@
+/* Carousel CSS properties */
+.carousel-img{
+    height: 70vh;
+    width: 100vh;
+}
+.hotel-img{
+    background-image: url("../assets/Images/Hotel_home.png");
+    background-size: 100% 100%;
+}
+.aeroplane-img{
+    background-image: url('../assets/Images/Aeroplane_home.png');
+    background-size: 100% 100%;
+}
+.bus-img{
+    background-image: url('../assets/Images/Bus_home.png');
+    background-size: 100% 100%;
+}
+.train-img{
+    background-image: url('../assets/Images/Train_home.png');
+    background-size: 100% 100%;
+}
+/* For Responsive Carousel */
+@media only screen and (min-width: 100px) {
+    .carousel-inner {
+      height: 260px;
+    }
+    .carousel-inner .carousel-img{
+        height: 260px;
+        width:100vw;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .carousel-inner {
+      height: 420px;
+    }
+    .carousel-inner .carousel-img{
+        height: 420px;
+        width: 100vw;
+    }
+}
