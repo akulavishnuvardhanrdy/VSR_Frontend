@@ -130,3 +130,27 @@ export const DoubleNonAcDesc = `
   VSR Booking double non-AC rooms provide excellent value for money, making them a popular 
   option for those looking to balance affordability with comfort during their travels.
 `;
+
+export const SingleACDesc = `
+  Booking a single AC room through VSR Booking is perfect for solo travelers 
+  who desire a blend of comfort and convenience. These rooms are well-appointed with air 
+  conditioning, ensuring a cool and relaxing atmosphere regardless of the outside temperature. 
+  Ideal for business trips or personal getaways, the single AC rooms come with modern amenities 
+  designed to meet the needs of today's traveler. The booking process is seamless, allowing you 
+  to easily select your preferred dates, check room availability, and finalize your reservation 
+  with just a few clicks. VSR Booking single AC rooms offer a comfortable and affordable option 
+  for solo travelers seeking a restful and enjoyable stay.
+`;
+
+export const SingleNonACDesc = `
+  Booking a single non-AC room through VSR Booking is an excellent 
+  choice for solo travelers looking for budget-friendly accommodation without compromising 
+  on comfort. These rooms are thoughtfully designed to provide a cozy and pleasant stay, 
+  equipped with essential amenities to ensure a hassle-free experience. Ideal for both 
+  short and long stays, the non-AC rooms offer great value for money, making them a 
+  practical option for travelers who prioritize affordability. The booking process is 
+  straightforward and user-friendly, allowing you to select your travel dates, check 
+  availability, and confirm your reservation with ease. VSR Booking single non-AC rooms 
+  are perfect for solo adventurers seeking a comfortable and economical stay.
+`;
+

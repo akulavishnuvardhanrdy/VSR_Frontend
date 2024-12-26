@@ -1,44 +1,43 @@
 import './CSS/Booking.css';
 import BookingCard from "./BookingCard";
-import FirstImg from './assets/Images/First.jpg';
-import BussinessImg from './assets/Images/Bussiness.jpg'
-import EconomyImg from './assets/Images/economy.jpg'
-import PremiumEconomyImg from './assets/Images/PremiumEconomy.jpeg'
-import { FirstClassDesc,EconomyClassDesc,PremiumEconomyDesc,BussinessClassDesc } from "./Services/Description";
+import SingleNonACImg from './assets/Images/SingleNonAC.jpg';
+import SingleACImg from './assets/Images/SingleAC.jpg'
+import DoubleNonACImg from './assets/Images/DoubleNonAC.jpeg'
+import DoubleACImg from './assets/Images/DoubleAC.jpg'
+import { SingleACDesc ,SingleNonACDesc , DoubleACDesc , DoubleNonAcDesc } from "./Services/Description";
 
-const Aeroplane = () => {
+const Hotel = () => {
   return (
     <section style={{ backgroundColor: 'rgb(220, 243, 243)' }}>
-      <div className="home-div container" id="aeroplane" style={{ paddingBottom: '40px' }}>
-        <h1 className="card-heading">Aeroplane Booking:</h1>
+      <div className="home-div container" id="hotel" style={{ paddingBottom: '40px' }}>
+        <h1 className="card-heading">Hotel Booking:</h1>
 
-        {/* First Class */}
         <BookingCard
-          subHeading="First Class"
-          description= {FirstClassDesc}
-          imageSrc={FirstImg}
-          offer="10% Off"
+          subHeading="Single Non AC"
+          description= {SingleNonACDesc}
+          imageSrc={SingleNonACImg}
+          offer="24% Off"
         />
 
         <BookingCard
-          subHeading="Economy Class"
-          description= {EconomyClassDesc}
-          imageSrc={EconomyImg}
-          offer="25% Off"
+          subHeading="Single AC"
+          description= {SingleACDesc}
+          imageSrc={SingleACImg}
+          offer="20% Off"
         />
 
         <BookingCard
-          subHeading="Premium Economy Class"
-          description= {PremiumEconomyDesc}
-          imageSrc={PremiumEconomyImg}
+          subHeading="Double Non AC"
+          description= {DoubleNonAcDesc}
+          imageSrc={DoubleNonACImg}
           offer="17% Off"
         />
 
         <BookingCard
-          subHeading="Bussiness Class"
-          description= {BussinessClassDesc}
-          imageSrc={BussinessImg}
-          offer="20% Off"
+          subHeading="Double AC"
+          description= {DoubleACDesc}
+          imageSrc={DoubleACImg}
+          offer="25% Off"
         />
 
       </div>
@@ -46,4 +45,4 @@ const Aeroplane = () => {
   );
 };
 
-export default Aeroplane;
+export default Hotel;
