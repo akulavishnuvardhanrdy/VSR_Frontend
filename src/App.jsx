@@ -3,7 +3,7 @@ import Carousal from './Carousal'
 import Sidebar  from './SideBar'
 import Footer from './Footer'
 import Wave from './Wave'
-import Aeroplane from './Hotel'
+import Aeroplane from './Bus'
 
 function App() {
 

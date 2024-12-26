@@ -154,3 +154,52 @@ export const SingleNonACDesc = `
   are perfect for solo adventurers seeking a comfortable and economical stay.
 `;
 
+export const LowFloorBusDesc = `
+  Booking a low-floor bus through VSR Booking ensures a seamless and comfortable travel 
+  experience for all passengers, especially those with mobility challenges. Low-floor 
+  buses, designed with ease of access in mind, provide step-free entry, making boarding 
+  and alighting effortless for elderly passengers, wheelchair users, and parents with 
+  strollers. VSR Booking's platform is user-friendly, allowing you to select your 
+  preferred low-floor bus with just a few clicks. With real-time availability updates, 
+  secure payment options, and comprehensive customer support, VSR Booking simplifies 
+  your travel planning, ensuring a smooth journey from start to finish. Whether for 
+  daily commutes or special trips, VSR Booking guarantees that your transportation needs
+   are met with convenience and reliability.
+`;
+
+export const TopOpenBusDesc = `
+  Booking an open-top bus through VSR Booking offers a unique and exhilarating way 
+  to explore scenic routes and city landscapes. Open-top buses provide an unobstructed 
+  view of your surroundings, making them perfect for sightseeing tours, special events,
+   or leisurely drives. VSR Booking intuitive platform allows you to easily find and 
+   reserve open-top buses, ensuring that you can enjoy panoramic vistas and fresh air 
+   during your journey. With features like real-time availability, secure transactions,
+    and dedicated customer support, VSR Booking makes it effortless to plan your next 
+    adventure. Experience the freedom and excitement of open-top travel with the 
+    convenience and reliability that VSR Booking is known for..
+`;
+
+export const ArticulatedBusDesc = `
+  Booking an articulated bus through VSR Booking is an excellent choice for managing 
+  large groups or busy transit routes with ease and efficiency. Articulated buses, 
+  known for their high capacity and flexible design, can comfortably accommodate more 
+  passengers than traditional buses, making them ideal for urban commutes and special 
+  events. VSR Booking platform allows you to easily find and reserve these spacious 
+  vehicles, ensuring that your transportation needs are met with convenience and 
+  reliability. With user-friendly features like real-time availability, secure 
+  payments, and dedicated customer support, VSR Booking streamlines the process of 
+  securing an articulated bus. Whether for daily public transit or organizing large 
+  group travel, VSR Booking ensures a smooth, comfortable, and efficient journey.
+`;
+
+export const DoubleDuckerBusDesc = `
+Double-decker buses are iconic vehicles renowned for their capacity to transport a 
+large number of passengers while offering a unique travel experience. With two levels 
+of seating, these buses can accommodate more riders without requiring additional road 
+space, making them an efficient solution for densely populated urban areas and popular
+ tourist routes. Passengers enjoy elevated views from the upper deck, enhancing the 
+ sightseeing experience. Double-decker buses are not only practical for regular public 
+ transit but also ideal for special events, city tours, and long-distance travel. Their
+  distinctive design and increased capacity contribute to reducing congestion and 
+  improving the overall efficiency of transportation networks.
+`;
