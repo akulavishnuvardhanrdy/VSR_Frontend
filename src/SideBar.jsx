@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom';
 import './CSS/Sidebar.css';
 import Logo from './assets/Images/Logo.png';
 import Create from './assets/Images/Create.png';
-import { ScrollToMain } from './Services/Scroll';
+import { ScrollToMain, ScrollToBottom } from './Services/Scroll';
 
 const SideBar = () => {
   const [showScroll, setShowScroll] = useState(false);
+  const [showFooter, setShowFooter] = useState(false);
+
   const menuItems = [
     { path: '/hotel', label: 'Hotel Booking' },
     { path: '/bus', label: 'Bus Booking' },
@@ -14,8 +16,16 @@ const SideBar = () => {
     { path: '/aeroplane', label: 'Aeroplane Booking' },
     { path: '/', label: 'Contact Us' },
   ];
-  const handleButtonClick = () => {
-    setShowScroll(true);  
+
+  const handleButtonClick = (label) => {
+    if (label === 'Contact Us') {
+      setShowScroll(false);
+      setShowFooter(true);
+    }
+    else {
+      setShowFooter(false);
+      setShowScroll(true);
+    }
   };
 
   return (
@@ -25,8 +35,12 @@ const SideBar = () => {
           <div>
             <ul>
               {menuItems.map(({ path, label }) => (
-                <li key={path} >
-                  <NavLink to={path} activeClassName="active" onClick={handleButtonClick}>
+                <li key={path}>
+                  <NavLink
+                    to={path}
+                    activeClassName="active"
+                    onClick={() => handleButtonClick(label)}
+                  >
                     <span>{label}</span>
                   </NavLink>
                 </li>
@@ -48,6 +62,7 @@ const SideBar = () => {
         </div>
       </div>
       {showScroll && <ScrollToMain />}
+      {showFooter && <ScrollToBottom />}
     </section>
   );
 };
