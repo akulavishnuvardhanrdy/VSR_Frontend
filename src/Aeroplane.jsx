@@ -10,8 +10,7 @@ const Aeroplane = () => {
   return (
     <section style={{ backgroundColor: 'rgb(220, 243, 243)' }}>
       <div className="home-div container" id="aeroplane" style={{ paddingBottom: '40px' }}>
-        <h1 className="card-heading">Aeroplane Booking:</h1>
-
+        <h1 className="card-heading">Aeroplane Booking</h1>
         {/* First Class */}
         <BookingCard
           subHeading="First Class"

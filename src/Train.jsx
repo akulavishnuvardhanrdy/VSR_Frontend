@@ -10,7 +10,7 @@ const Train = () => {
   return (
     <section style={{ backgroundColor: 'rgb(220, 243, 243)' }}>
       <div className="home-div container" id="train" style={{ paddingBottom: '40px' }}>
-        <h1 className="card-heading">Train Booking:</h1>
+        <h1 className="card-heading">Train Booking</h1>
 
         <BookingCard
           subHeading="Vande Bharath Express"

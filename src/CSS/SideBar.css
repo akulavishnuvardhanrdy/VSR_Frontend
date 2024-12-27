@@ -1,3 +1,7 @@
+/* Include Caveat Font */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jacquard+24+Charted&family=Jersey+25+Charted&family=Pacifico&display=swap');
+
+
 /* CSS properties for the Navigation Bar */
 section {
     position: relative;
@@ -16,7 +20,6 @@ section {
 .list ul li {
   position: relative;
   left: 0;
-  
   list-style: none;
   margin: 4px 0;
   border-left: 2px solid #f50057;
@@ -49,24 +52,3 @@ section {
 .list ul li:hover:before {
   transform: scaleX(1);
 }
-
-.logo-container {
-    height: 250px;
-    width: 370px;
-    background-image: url('../assets/Images/Logo.png');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-}
-
-.create-button {
-    height: 150px;
-    width: 180px;
-    background-image: url('../assets/Images/Create.png');
-    background-size: contain; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    cursor: pointer; 
-  }
-  
-  
