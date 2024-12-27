@@ -21,7 +21,7 @@ const Footer = () => {
                     <p>&#x2709; rehanhussain0842@gmail.com</p>
                 </div>
             </div>
-            <div className="support-image"></div>
+            <div className="support-image d-none d-lg-block"></div>
         </div>
     );
   };

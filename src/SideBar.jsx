@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './CSS/Sidebar.css';
 import Logo from './assets/Images/Logo.png';
-import Create from './assets/Images/Create.png';
 import { ScrollToMain, ScrollToBottom } from './Services/Scroll';
 
 const SideBar = () => {
@@ -49,15 +48,6 @@ const SideBar = () => {
           </div>
           <div>
             <img src={Logo} alt="Logo" style={{ height: '250px', width: '370px' }} />
-            <br />
-            <button
-              type="button"
-              data-toggle="modal"
-              data-target="#signUp"
-              style={{ backgroundColor: 'transparent', border: 'none' }}
-            >
-              <img src={Create} alt="Create Account" height="150px" width="180px" />
-            </button>
           </div>
         </div>
       </div>
