@@ -8,10 +8,22 @@ import Aeroplane from './Aeroplane';
 import Bus from './Bus';
 import Hotel from './Hotel';
 import Train from './Train';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
+const ScrollToTop = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 1000, behavior: 'smooth' });
+  }, [location]);
+
+  return null;
+};
 function App() {
   return (
     <Router>
+       <ScrollToTop />
       <div className="app-container">
         <Carousal />
         <Sidebar />
