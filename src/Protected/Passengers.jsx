@@ -18,9 +18,6 @@ const BookingForm = () => {
 
   return (
     <div  style={{ backgroundColor: '#f8f9fa', marginTop:'12px'}}>
-    <h1 className="text-center mb-2" style={{ fontFamily: "Courier New, Courier, monospace", fontSize: '25px', fontWeight: 'bold' }}>
-          {localStorage.getItem('Type')} Booking
-    </h1>
     <div className="d-flex justify-content-center align-items-center min-vh-100">
       <div className="row w-100 justify-content-around">
         <div className="d-flex flex-column justify-content-center align-items-center">
@@ -33,6 +30,8 @@ const BookingForm = () => {
         </div>
 
         <div className="col-md-7  p-4" style={{ borderRadius: '12px' }}>
+        <h1 className='text-center' style={{fontSize:'20px'}}>{localStorage.getItem('Type')} Booking</h1>
+    
           <form onSubmit={handleSubmit}>
             {['Full Name', 'Age', 'Gender', 'Email', 'Phone No', 'Home Town'].map((field) => (
               <div className="mb-3" key={field}>

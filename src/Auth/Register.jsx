@@ -38,6 +38,8 @@ const Register = () => {
           <div className="text-center mb-3">
             <img src={Favicon} alt="Favicon" style={{ height: '50px', width: '100px' }} />
           </div>
+          
+        <h1 className='text-center' style={{fontSize:'20px'}}>Register</h1>
           <form onSubmit={handleSubmit} >
             {['First Name', 'Last Name', 'DOB', 'Gender', 'Email', 'Phoneno', 'Password'].map((field) => (
               <div className="mb-3" key={field}>

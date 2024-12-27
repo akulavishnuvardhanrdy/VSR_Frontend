@@ -24,6 +24,7 @@ const LoginForm = () => {
           className="d-none d-lg-block col-lg-6"
           style={{ height: '100vh', objectFit: 'cover' }}
         />
+        
         <div
           className="d-flex flex-column justify-content-center col-lg-6 col-md-8 mx-auto p-4"
           style={{ borderRadius: '12px', backgroundColor: '#f8f9fa' }}
@@ -31,6 +32,7 @@ const LoginForm = () => {
           <div className="text-center mb-3">
             <img src={Favicon} alt="Favicon" style={{ height: '50px', width: '100px' }} />
           </div>
+          <h1 className='text-center' style={{fontSize:'20px'}}>Login</h1>
           <form onSubmit={handleSubmit}>
             {['email', 'password'].map((field) => (
               <div className="mb-3" key={field}>
