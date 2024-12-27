@@ -1,82 +1,79 @@
 import { useState } from 'react';
+import login from '../assets/Images/Loginbg.png';
 import Favicon from '../assets/Images/Favicon.png';
+import { NavLink } from 'react-router-dom';
 
-const LoginForm = () => {
-  const [loginData, setLoginData] = useState({
+const Register = () => {
+  const [registerData, setRegisterData] = useState({
+    firstname: '',
+    lastname: '',
+    dob: '',
+    gender: '',
     email: '',
-    password: '',
+    phoneno: '',
+    password: ''
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setLoginData((prevData) => ({ ...prevData, [name]: value }));
-  };
+  const handleChange = ({ target: { name, value } }) =>
+    setRegisterData((prev) => ({ ...prev, [name]: value }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(loginData); // Replace with actual login logic
+    console.log(registerData);
   };
 
   return (
-    <div style={{ backgroundColor: '#f8f9fa', marginTop: '12px' }}>
-      <h1 className="text-center mb-2" style={{ fontFamily: "Courier New, Courier, monospace", fontSize: '25px', fontWeight: 'bold' }}>
-        Login
-      </h1>
-      <div className="d-flex justify-content-center align-items-center min-vh-100">
-        <div className="row w-100 justify-content-around">
-          <div className="d-flex flex-column justify-content-center align-items-center">
-            <img
-              src={Favicon}
-              height="220"
-              width="320"
-              alt="Logo"
-              style={{
-                borderRadius: '50%',
-                marginBottom: '10px',
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              }}
-            />
+    <div className="d-flex align-items-center justify-content-center min-vh-100" style={{ backgroundColor: '#f8f9fa' }}>
+      <div className="row" style={{ width: '80%' }}>
+        <img
+          src={login}
+          alt="Login Background"
+          className="d-none d-lg-block col-lg-6"
+          style={{ height: '100vh', objectFit: 'cover' }}
+        />
+        <div
+          className="d-flex flex-column justify-content-center col-lg-6 col-md-8 mx-auto p-4 "
+          style={{ borderRadius: '12px', backgroundColor: '#f8f9fa' }}
+        >
+          <div className="text-center mb-3">
+            <img src={Favicon} alt="Favicon" style={{ height: '50px', width: '100px' }} />
           </div>
-
-          <div className="col-md-5 p-4" style={{ borderRadius: '12px' }}>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="email" style={{ fontSize: '16px' }}>Email</label>
+          <form onSubmit={handleSubmit} >
+            {['First Name', 'Last Name', 'DOB', 'Gender', 'Email', 'Phoneno', 'Password'].map((field) => (
+              <div className="mb-3" key={field}>
+                <label htmlFor={field} style={{ fontSize: '16px' }}>
+                  {field.charAt(0).toUpperCase() + field.slice(1)}
+                </label>
                 <input
-                  type="email"
+                  type={field.toLowerCase().replace(' ','') === 'dob' ? 'date' : field === 'password' ? 'password' : 'text'}
                   className="form-control"
-                  name="email"
-                  placeholder="Enter your email"
-                  value={loginData.email}
+                  name={field.toLowerCase().replace(' ','')}
+                  placeholder={`Enter your ${field}`}
+                  value={registerData[field.toLowerCase().replace(' ','')]}
                   onChange={handleChange}
                   required
                 />
               </div>
-              <div className="mb-3">
-                <label htmlFor="password" style={{ fontSize: '16px' }}>Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  placeholder="Enter your password"
-                  value={loginData.password}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-success w-100 mt-3"
-                style={{ fontSize: '18px', fontWeight: 'bold' }}
-              >
-                Login
-              </button>
-            </form>
-          </div>
+            ))}
+            <button
+              type="submit"
+              className="btn btn-success w-100 mt-3"
+              style={{ fontSize: '18px', fontWeight: 'bold' }}
+            >
+              Create
+            </button>
+            <div className="mt-2 text-center">
+              <p>
+                <NavLink to="/login" style={{ color: 'gray', fontSize: '15px' }}>
+                  Have an account? Login
+                </NavLink>
+              </p>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   );
 };
 
-export default LoginForm;
+export default Register;
