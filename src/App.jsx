@@ -10,6 +10,8 @@ import Hotel from './Hotel';
 import Train from './Train';
 import Passengers from './Protected/Passengers'
 import ProtectedRoute from './ProtectedRoute';
+import LoginForm from './Auth/Login';
+import Register from './Auth/Register'
 
 const HomeLayout = () => {
   return (
@@ -41,6 +43,9 @@ function App() {
             <Route path="/hotel" element={<Hotel />} />
             <Route path="/aeroplane" element={<Aeroplane />} />
           </Route>
+
+          <Route path='/login' element ={<LoginForm/>}></Route>
+          <Route path='/register' element ={<Register/>}></Route>
 
           <Route path="user/*" element={<ProtectedRoute isAuthenticated={'true'}><AuthorizedLayout /></ProtectedRoute>} >
           <Route index element={<Passengers />} />
