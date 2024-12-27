@@ -1,33 +1,5 @@
-*{
-    box-sizing: border-box;
-}
-.diving{
-    display: flex;
-    justify-content: center;
-    color:white
-}
-body{
-    background-image: url(assets/Images/Booking.png);
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    background-attachment: fixed;
-}
-.main{
-    background-color: white;
-    width:50vw;
-    padding: 20px;
-    border:1px solid black;
-    margin:20px;
-    border-radius: 18px;
-}
-.main-heading{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 30px;
+.offer{
+    color: green;
     font-weight: bold;
-    text-align: center;
-}
-.form-heading{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 18px;
+    padding-right: 7px;
 }

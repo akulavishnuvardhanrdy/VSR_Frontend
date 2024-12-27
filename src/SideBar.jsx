@@ -9,7 +9,7 @@ const SideBar = () => {
     { path: '/bus', label: 'Bus Booking' },
     { path: '/train', label: 'Train Booking' },
     { path: '/aeroplane', label: 'Aeroplane Booking' },
-    { path: '/contact', label: 'Contact Us' },
+    { path: '/', label: 'Contact Us' },
   ];
 
   return (

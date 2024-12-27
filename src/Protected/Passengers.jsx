@@ -1,122 +1,66 @@
-import "../CSS/Passengers.css"; 
-import Logo from '../assets/Images/Logo.png';
+import { useState } from 'react';
+import Favicon from '../assets/Images/Favicon.png';
 
-const Passengers = () => {
-  const formFields = [
-    {
-      label: "Mobile Number",
-      type: "number",
-      placeholder: "Mobile no",
-      name: "mobileNumber",
-      id: "Mobile",
-    },
-    {
-      label: "Select the Date",
-      type: "date",
-      name: "date",
-      id: "date",
-    },
-  ];
+const BookingForm = () => {
+  const [formData, setFormData] = useState({
+    fullname: '', age: '', gender: '', email: '', phoneno: '', hometown: '',
+  });
 
-  const bookingOptions = [
-    { label: "Hotel", name: "hotelType", options: ["None", "SingleAC", "SingleNonAC", "DoubleAC", "DoubleNonAC"] },
-    { label: "Bus", name: "busType", options: ["None", "LowFloorBus", "TopOpenBus", "ArticulatedBus", "DoubleDuckerBus", "StepEntrenceBus"] },
-    { label: "Train", name: "trainType", options: ["None", "VandeBharatExpress", "BulletTrain", "NilgiriExpresss", "MonoRail", "MetroRail"] },
-    { label: "Aeroplane", name: "aeroplaneType", options: ["None", "FirstClass", "EconomyClass", "PremiumEconomyClass", "BusinessClass"] },
-  ];
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log( formData);
+  };
 
   return (
-    <div className="main">
-      <h1 className="main-heading">VSR Booking Form</h1>
-      <div className="d-flex justify-content-center">
-        <img src={Logo} alt="Logo" height="200px" width="250px" />
+    <div  style={{ backgroundColor: '#f8f9fa', marginTop:'12px'}}>
+    <h1 className="text-center mb-2" style={{ fontFamily: "Courier New, Courier, monospace", fontSize: '25px', fontWeight: 'bold' }}>
+          {localStorage.getItem('Type')} Booking
+    </h1>
+    <div className="d-flex justify-content-center align-items-center min-vh-100">
+      <div className="row w-100 justify-content-around">
+        <div className="d-flex flex-column justify-content-center align-items-center">
+          <img src={`../../${localStorage.getItem('Image')}`} height="220" width="320" alt="Logo" style={{ borderRadius: '50%', marginBottom: '10px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }} />
+          <p>
+            <span className="offer">&nbsp;{localStorage.getItem('Offer')}&nbsp;</span>
+            <span style={{ color: 'gray' }}>on&nbsp;</span>
+            <img src={Favicon} className="card-img-card-img" alt="Offer" />
+          </p>
+        </div>
+
+        {/* Booking Form */}
+        <div className="col-md-7  p-4" style={{ borderRadius: '12px' }}>
+          
+         
+
+          <form onSubmit={handleSubmit}>
+            {['Full Name', 'Age', 'Gender', 'Email', 'Phone No', 'Home Town'].map((field) => (
+              <div className="mb-3" key={field}>
+                <label htmlFor={field} style={{ fontSize: '16px' }}>{field}</label>
+                <input
+                  type={field === 'age' ? 'number' : 'text'}
+                  className="form-control"
+                  name={field.toLowerCase().replace(' ','')}
+                  placeholder={field}
+                  value={formData[field]}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            ))}
+
+
+            <button type="submit" className="btn btn-success w-100 mt-3" style={{ fontSize: '18px', fontWeight: 'bold' }}>Confirm</button>
+          </form>
+        </div>
       </div>
-
-      <form action="Booked.php" method="post">
-        <p className="form-heading" style={{ textAlign: "center" }}>
-          Enter your Name
-        </p>
-        <div className="row">
-          <div className="col">
-            <input type="text" name="firstName" placeholder="First" className="form-control" required />
-          </div>
-          <div className="col">
-            <input type="text" name="lastName" placeholder="Last" className="form-control" required />
-          </div>
-        </div>
-
-        {formFields.map((field, index) => (
-          <div className="form-group" key={index}>
-            <label htmlFor={field.id} className="form-heading">
-              {field.label}
-            </label>
-            <input
-              type={field.type}
-              className="form-control"
-              placeholder={field.placeholder}
-              id={field.id}
-              name={field.name}
-              required
-            />
-          </div>
-        ))}
-
-        <p className="form-heading">Type of Booking</p>
-        <select name="type" className="custom-select" required>
-          <option value="Hotel">Hotel</option>
-          <option value="Bus">Bus</option>
-          <option value="Train">Train</option>
-          <option value="Aeroplane">Aeroplane</option>
-        </select>
-
-        {bookingOptions.map((option, index) => (
-          <div key={index}>
-            <p className="form-heading">
-              <br />
-              {`Type of ${option.label}`}
-            </p>
-            <select name={option.name} className="custom-select" required>
-              {option.options.map((opt, i) => (
-                <option value={opt} key={i}>
-                  {opt}
-                </option>
-              ))}
-            </select>
-          </div>
-        ))}
-
-        <p className="form-heading">
-          <br />
-          If Hotel Enter No
-        </p>
-        <div className="row">
-          <div className="col">
-            <input
-              type="text"
-              name="source"
-              placeholder="Source"
-              className="form-control"
-              required
-            />
-          </div>
-          <div className="col">
-            <input
-              type="text"
-              name="destination"
-              placeholder="Destination"
-              className="form-control"
-              required
-            />
-          </div>
-        </div>
-
-        <br />
-        <button type="submit" className="btn btn-outline-success float-right">
-          Confirm
-        </button>
-      </form>
+    </div>
     </div>
   );
 };
 
-export default Passengers;
+export default BookingForm;

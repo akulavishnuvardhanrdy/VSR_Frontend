@@ -8,6 +8,11 @@ const BookingCard = ({
   imageSrc, 
   offer
 }) => {
+  const handleBooking = () => {
+    localStorage.setItem('Type', subHeading);
+    localStorage.setItem('Image',imageSrc);
+    localStorage.setItem('offer',offer);
+  };
   return (
     <div className="row booking-card" style={{ paddingTop: '30px' }}>
       <div className="col-lg-8">
@@ -16,8 +21,7 @@ const BookingCard = ({
         <button 
           className="card-button" 
           type="button" 
-          data-toggle="modal" 
-          data-target="#login" 
+          onClick={handleBooking}
         >
           Book Now
         </button>
