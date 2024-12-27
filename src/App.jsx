@@ -8,7 +8,6 @@ import Aeroplane from './Aeroplane';
 import Bus from './Bus';
 import Hotel from './Hotel';
 import Train from './Train';
-import { ScrollToMain } from './Services/Scroll';
 import Passengers from './Protected/Passengers'
 import Header from './Header'
 import ProtectedRoute from './ProtectedRoute';
@@ -16,7 +15,6 @@ import ProtectedRoute from './ProtectedRoute';
 const HomeLayout = () => {
   return (
     <>
-      <ScrollToMain/>
       <Carousal />
       <Sidebar/>
       <Wave/>

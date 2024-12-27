@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './CSS/Booking.css'; 
 import Favicon from './assets/Images/Favicon.png';
@@ -8,11 +9,15 @@ const BookingCard = ({
   imageSrc, 
   offer
 }) => {
+  const navigate = useNavigate(); 
+
   const handleBooking = () => {
     localStorage.setItem('Type', subHeading);
-    localStorage.setItem('Image',imageSrc);
-    localStorage.setItem('offer',offer);
+    localStorage.setItem('Image', imageSrc);
+    localStorage.setItem('offer', offer);
+    navigate('/user'); 
   };
+
   return (
     <div className="row booking-card" style={{ paddingTop: '30px' }}>
       <div className="col-lg-8">
@@ -27,7 +32,7 @@ const BookingCard = ({
         </button>
       </div>
       <div className="card-img-card col-lg-4">
-        <img src={imageSrc} className="card-div-img" />
+        <img src={imageSrc} className="card-div-img" alt="Card" />
         {offer && (
           <div className="card-bottom">
             <p>
