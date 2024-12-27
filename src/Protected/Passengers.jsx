@@ -32,11 +32,7 @@ const BookingForm = () => {
           </p>
         </div>
 
-        {/* Booking Form */}
         <div className="col-md-7  p-4" style={{ borderRadius: '12px' }}>
-          
-         
-
           <form onSubmit={handleSubmit}>
             {['Full Name', 'Age', 'Gender', 'Email', 'Phone No', 'Home Town'].map((field) => (
               <div className="mb-3" key={field}>
@@ -52,8 +48,6 @@ const BookingForm = () => {
                 />
               </div>
             ))}
-
-
             <button type="submit" className="btn btn-success w-100 mt-3" style={{ fontSize: '18px', fontWeight: 'bold' }}>Confirm</button>
           </form>
         </div>

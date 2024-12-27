@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes , Outlet } from 'react-router-dom';
 import './App.css';
 import Carousal from './Carousal';
 import Sidebar from './SideBar';
@@ -8,48 +8,49 @@ import Aeroplane from './Aeroplane';
 import Bus from './Bus';
 import Hotel from './Hotel';
 import Train from './Train';
-import { useLocation } from 'react-router-dom';
-import { useEffect} from 'react';
+import { ScrollToMain } from './Services/Scroll';
 import Passengers from './Protected/Passengers'
-const ScrollToMain = () => {
-  const location = useLocation();
+import Header from './Header'
+import ProtectedRoute from './ProtectedRoute';
 
-  useEffect(() => {
-    window.scrollTo({ top: 1000, behavior: 'smooth' });
-  }, [location]);
+const HomeLayout = () => {
+  return (
+    <>
+      <ScrollToMain/>
+      <Carousal />
+      <Sidebar/>
+      <Wave/>
+      <Outlet />
+      <Footer />
+    </>
+  )
+}
 
-  return null;
-};
-const ScrollToBottom = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo({ bottom: 0, behavior: 'smooth' });
-  }, [location]);
-
-  return null;
-};
+const AuthorizedLayout = ()=>{
+  return(
+    <>
+      <Header/>
+      <Outlet/>
+    </>
+  )
+}
 function App() {
   return (
-    // <Router>
-    //   <ScrollToMain />
-    //   <div className="app-container">
-    //     <Carousal />
-    //     <Sidebar/>
-    //     <Wave />
-    //     <div className="main-content">
-    //       <Routes>
-    //         <Route path="/" element={<Hotel />} />
-    //         <Route path="/bus" element={<Bus />} />
-    //         <Route path="/train" element={<Train />} />
-    //         <Route path="/hotel" element={<Hotel />} />
-    //         <Route path="/aeroplane" element={<Aeroplane />} />
-    //       </Routes>
-    //     </div>
-    //     <Footer/>
-    //   </div>
-    // </Router>
-    <Passengers/>
+    <Router>
+        <Routes>
+          <Route path="/" element={<HomeLayout />} >
+            <Route index element={<Hotel />} />
+            <Route path="/bus" element={<Bus />} />
+            <Route path="/train" element={<Train />} />
+            <Route path="/hotel" element={<Hotel />} />
+            <Route path="/aeroplane" element={<Aeroplane />} />
+          </Route>
+
+          <Route path="user/*" element={<ProtectedRoute isAuthenticated={'true'}><AuthorizedLayout /></ProtectedRoute>} >
+          <Route index element={<Passengers />} />
+        </Route>
+        </Routes>
+    </Router>
   );
 }
 
