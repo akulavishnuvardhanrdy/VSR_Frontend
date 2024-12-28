@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Favicon from '../assets/Images/Favicon.png';
-import Receipt from './Receipt'; // Import the Receipt component
+import Receipt from './Receipt'; 
+import axios from 'axios';
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const BookingForm = () => {
     phoneno: '',
     hometown: '',
   });
+  const [error, setError] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false); // Toggle between form and receipt
 
   const handleChange = (e) => {
@@ -19,10 +21,24 @@ const BookingForm = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true); // Show the receipt after submission
+    const token = localStorage.getItem('jwtToken');  // Assuming the JWT is stored in localStorage
+    
+    try {
+      const response = await axios.post('http://localhost:4000/booking', formData, {
+        headers: {
+          'Authorization': `Bearer ${token}`  // Pass the token in the header
+        }
+      });
+      setError('');
+      setIsSubmitted(true);
+    } catch (err) {
+      setError('Invalid Details');
+      console.error(err.response?.data?.error);
+    }
   };
+  
 
   return (
     <div style={{ backgroundColor: '#f8f9fa', marginTop: '12px' }}>
@@ -62,7 +78,7 @@ const BookingForm = () => {
                     <div className="mb-3" key={field}>
                       <label htmlFor={field} style={{ fontSize: '16px' }}>{field}</label>
                       <input
-                        type={field === 'Age' ? 'number' : 'text'}
+                        type={field === 'Age' ? 'number' : field === 'Booking Date' ? 'date': 'text'}
                         className="form-control"
                         name={field.toLowerCase().replace(' ', '')}
                         placeholder={field}
@@ -80,7 +96,8 @@ const BookingForm = () => {
                     Confirm
                   </button>
                 </form>
-              </div>
+                {error && <div className="text-danger font-weight-bold text-center mt-2">{error}</div>}
+               </div>
             </>
           )}
         </div>
