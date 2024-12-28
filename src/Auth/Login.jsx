@@ -19,7 +19,6 @@ const LoginForm = () => {
       const response = await axios.post('http://localhost:4000/login', loginData);
       const { token } = response.data;
       localStorage.setItem('jwtToken', token);
-      console.log('Login successful, token:', token);
       setError('');
       navigate('/type');
     } catch (err) {

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import login from '../assets/Images/Loginbg.png';
 import Favicon from '../assets/Images/Favicon.png';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Register = () => {
   const [registerData, setRegisterData] = useState({
@@ -13,13 +15,22 @@ const Register = () => {
     phoneno: '',
     password: ''
   });
+  const navigate = useNavigate();
+  const [error, setError] = useState('');
 
   const handleChange = ({ target: { name, value } }) =>
     setRegisterData((prev) => ({ ...prev, [name]: value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(registerData);
+    try {
+      const response = await axios.post('http://localhost:4000/addUser', registerData);
+      setError('');
+      navigate('/login');
+    } catch (err) {
+      setError('Invalid Details');
+      console.error(err.response?.data?.error);
+    }
   };
 
   return (
@@ -67,6 +78,7 @@ const Register = () => {
                 </NavLink>
               
             </button>
+            {error && <div className="text-danger font-weight-bold text-center mt-2">{error}</div>}
             <div className="mt-2 text-center">
               <p>
                 <NavLink to="/login" style={{ color: 'gray', fontSize: '15px' }}>
