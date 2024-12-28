@@ -64,7 +64,7 @@ const BookingForm = () => {
                   }}
                 />
                 <p>
-                  <span className="offer">&nbsp;{localStorage.getItem('Offer')}&nbsp;</span>
+                  <span className="offer">&nbsp;{localStorage.getItem('offer')}&nbsp;</span>
                   <span style={{ color: 'gray' }}>on&nbsp;</span>
                   <img src={Favicon} className="card-img-card-img" alt="Offer" />
                 </p>

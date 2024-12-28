@@ -43,7 +43,7 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
 
         
-        <Route path="/type/*" element={<ProtectedRoute isAuthenticated={true}><HomeLayout /></ProtectedRoute>}>
+        <Route path="/type/*" element={<ProtectedRoute><HomeLayout /></ProtectedRoute>}>
           <Route index element={<Hotel />} />
           <Route path="bus" element={<Bus />} />
           <Route path="train" element={<Train />} />
@@ -51,7 +51,7 @@ function App() {
           <Route path="aeroplane" element={<Aeroplane />} />
         </Route>
 
-        <Route path="/user/*" element={<ProtectedRoute isAuthenticated={true}><AuthorizedLayout /></ProtectedRoute>}>
+        <Route path="/user/*" element={<ProtectedRoute><AuthorizedLayout /></ProtectedRoute>}>
           <Route index element={<Passengers />} />
         </Route>
         
