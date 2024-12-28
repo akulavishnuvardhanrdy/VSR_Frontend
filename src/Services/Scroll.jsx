@@ -6,7 +6,7 @@ export const ScrollToMain = () => {
     const location = useLocation();
   
     useEffect(() => {
-      window.scrollTo({ top: 1000, behavior: 'smooth' });
+      window.scrollTo({ top: 900, behavior: 'smooth' });
     }, [location]);
   
     return null;
