@@ -58,7 +58,7 @@ const LoginForm = () => {
               Login
             </button>
             <div className="mt-2 text-center">
-                <p><NavLink to="/register" style={{  color: 'gray' ,fontSize:'15px'  }}>Not having an account? Register</NavLink></p>
+                <span><NavLink to="/register" style={{  color: 'gray' ,fontSize:'15px'  }}>Not having an account? Register</NavLink></span><br/>
             </div>
           </form>
         </div>

@@ -53,7 +53,9 @@ const BookingForm = () => {
                 </p>
               </div>
               <div className="col-md-7 p-4" style={{ borderRadius: '12px' }}>
-                
+                <h1 className="text-center" style={{ fontSize: '20px' }}>
+                  Enter your Details
+                </h1>
                 <form onSubmit={handleSubmit}>
                   {['Full Name', 'Age', 'Gender', 'Email', 'Phone No', 'Home Town'].map((field) => (
                     <div className="mb-3" key={field}>

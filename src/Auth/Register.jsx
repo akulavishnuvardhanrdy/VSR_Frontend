@@ -62,7 +62,10 @@ const Register = () => {
               className="btn btn-success w-100 mt-3"
               style={{ fontSize: '18px', fontWeight: 'bold' }}
             >
-              Create
+              <NavLink to="/login" style={{ color: 'white', fontSize: '15px' }}>
+                Create
+                </NavLink>
+              
             </button>
             <div className="mt-2 text-center">
               <p>

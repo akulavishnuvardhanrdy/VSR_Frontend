@@ -9,11 +9,11 @@ const SideBar = () => {
   const [showFooter, setShowFooter] = useState(false);
 
   const menuItems = [
-    { path: '/hotel', label: 'Hotel Booking' },
-    { path: '/bus', label: 'Bus Booking' },
-    { path: '/train', label: 'Train Booking' },
-    { path: '/aeroplane', label: 'Aeroplane Booking' },
-    { path: '/', label: 'Contact Us' },
+    { path: '/type/hotel', label: 'Hotel Booking' },
+    { path: '/type/bus', label: 'Bus Booking' },
+    { path: '/type/train', label: 'Train Booking' },
+    { path: '/type/aeroplane', label: 'Aeroplane Booking' },
+    { path: '/type', label: 'Contact Us' },
   ];
 
   const handleButtonClick = (label) => {
