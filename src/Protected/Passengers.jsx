@@ -8,6 +8,7 @@ const BookingForm = () => {
     age: '',
     gender: '',
     email: '',
+    bookingdate:'',
     phoneno: '',
     hometown: '',
   });
@@ -57,7 +58,7 @@ const BookingForm = () => {
                   Enter your Details
                 </h1>
                 <form onSubmit={handleSubmit}>
-                  {['Full Name', 'Age', 'Gender', 'Email', 'Phone No', 'Home Town'].map((field) => (
+                  {['Full Name', 'Age', 'Gender', 'Email', 'Phone No','Booking Date', 'Home Town'].map((field) => (
                     <div className="mb-3" key={field}>
                       <label htmlFor={field} style={{ fontSize: '16px' }}>{field}</label>
                       <input
