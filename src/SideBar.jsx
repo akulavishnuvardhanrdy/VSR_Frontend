@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import './CSS/Sidebar.css';
+import './CSS/SideBar.css';
 import Logo from './assets/Images/Logo.png';
 import { ScrollToMain, ScrollToBottom } from './Services/Scroll';
 
