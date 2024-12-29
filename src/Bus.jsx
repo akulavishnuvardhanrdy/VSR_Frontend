@@ -34,7 +34,7 @@ const Bus = () => {
         />
 
         <BookingCard
-          subHeading="Double AC"
+          subHeading="Double Ducker"
           description= {DoubleDuckerBusDesc}
           imageSrc={DoubleDuckerImg}
           offer="15% Off"

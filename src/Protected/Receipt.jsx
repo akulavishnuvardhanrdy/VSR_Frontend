@@ -33,7 +33,7 @@ const Receipt = ({ formData }) => {
             </p>
           </div>
 
-          <div className="col-md-6 p-4" style={{ borderRadius: '12px',width:'100%',backgroundImage:`url(${Booked_logo})` , backgroundSize:'25% 25%',backgroundPosition:'center',backgroundRepeat: 'no-repeat'}}>
+          <div className="receipt-container col-md-6 p-4" style={{ borderRadius: '12px',width:'100%',backgroundImage:`url(${Booked_logo})` , backgroundSize:'25% 25%',backgroundPosition:'center',backgroundRepeat: 'no-repeat'}}>
             <h1 className="text-center" style={{ fontSize: '20px' }}>
               {localStorage.getItem('Type')}
             </h1>
