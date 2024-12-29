@@ -34,7 +34,8 @@ const BookingForm = () => {
       setError('');
       setIsSubmitted(true);
     } catch (err) {
-      setError('Invalid Details');
+      const msg = err.response?.data?.error?.split(':')[2].split(',')[0];
+      setError(msg);
       console.error(err.response?.data?.error);
     }
   };

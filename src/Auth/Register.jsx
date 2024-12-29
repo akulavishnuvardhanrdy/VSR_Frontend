@@ -17,6 +17,7 @@ const Register = () => {
   });
   const navigate = useNavigate();
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const handleChange = ({ target: { name, value } }) =>
     setRegisterData((prev) => ({ ...prev, [name]: value }));
@@ -26,10 +27,14 @@ const Register = () => {
     try {
       const response = await axios.post('https://vsr-backend.onrender.com/addUser', registerData);
       setError('');
-      navigate('/login');
+      setSuccess('Registered Successfully Click Below to Login')
     } catch (err) {
-      setError('Invalid Details');
-      console.error(err.response?.data?.error);
+      const msg = err.response?.data?.error?.split(':')[2];
+      if (msg.trim()==="email_1 dup key") {
+        setError('Email already exists. Please use a different one.');
+      } else{
+        setError(msg);
+      }
     }
   };
 
@@ -79,6 +84,7 @@ const Register = () => {
               
             </button>
             {error && <div className="text-danger font-weight-bold text-center mt-2">{error}</div>}
+            {success && <div className="text-success font-weight-bold text-center mt-2">{success}</div>}
             <div className="mt-2 text-center">
               <p>
                 <NavLink to="/login" style={{ color: 'gray', fontSize: '15px' }}>
