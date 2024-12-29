@@ -40,7 +40,7 @@ const Register = () => {
           src={login}
           alt="Login Background"
           className="d-none d-lg-block col-lg-6"
-          style={{ height: '100vh', objectFit: 'cover' }}
+          style={{ height: '100vh', objectFit: 'cover'  }}
         />
         <div
           className="d-flex flex-column justify-content-center col-lg-6 col-md-8 mx-auto p-4 "

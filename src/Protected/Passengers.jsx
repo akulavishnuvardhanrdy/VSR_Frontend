@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Favicon from '../assets/Images/Favicon.png';
 import Receipt from './Receipt'; 
 import axios from 'axios';
-
+import { ScrollToTop } from '../Services/Scroll';
 const BookingForm = () => {
   const [formData, setFormData] = useState({
     fullname: '',
@@ -44,6 +44,7 @@ const BookingForm = () => {
     <div style={{ backgroundColor: '#f8f9fa', marginTop: '12px' }}>
       <div className="d-flex justify-content-center align-items-center min-vh-100">
         <div className="row w-100 justify-content-around">
+          <ScrollToTop/>
           {isSubmitted ? (
             <Receipt formData={formData} />
           ) : (
