@@ -24,7 +24,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/addUser', registerData);
+      const response = await axios.post('https://vsr-backend.onrender.com/addUser', registerData);
       setError('');
       navigate('/login');
     } catch (err) {

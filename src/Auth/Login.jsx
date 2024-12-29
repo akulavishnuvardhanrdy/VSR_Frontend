@@ -16,7 +16,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/login', loginData);
+      const response = await axios.post('https://vsr-backend.onrender.com/login', loginData);
       const { token } = response.data;
       localStorage.setItem('jwtToken', token);
       setError('');

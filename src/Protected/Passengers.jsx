@@ -26,7 +26,7 @@ const BookingForm = () => {
     const token = localStorage.getItem('jwtToken');  // Assuming the JWT is stored in localStorage
     
     try {
-      const response = await axios.post('http://localhost:4000/booking', formData, {
+      const response = await axios.post('https://vsr-backend.onrender.com/booking', formData, {
         headers: {
           'Authorization': `Bearer ${token}`  // Pass the token in the header
         }
