@@ -1,6 +1,7 @@
 import Favicon from '../assets/Images/Favicon.png';
 import Booked_logo from '../assets/Images/Booked_logo.png';
 import PropTypes from 'prop-types';
+import { ScrollToTop } from '../Services/Scroll';
 
 const Receipt = ({ formData }) => {
   const formatHeading = (text) => {
@@ -13,8 +14,9 @@ const Receipt = ({ formData }) => {
   return (
     <div style={{ backgroundColor: '#f8f9fa', marginTop: '12px' }}>
       <div className="d-flex align-items-center ">
+        <ScrollToTop/>
         <div className="row w-100 justify-content-around">
-          <div className="col-md-5 d-flex flex-column justify-content-center align-items-center">
+          <div className=" d-flex flex-column justify-content-center align-items-center">
             <img
               src={`../../${localStorage.getItem('Image')}`}
               height="220"
@@ -33,7 +35,7 @@ const Receipt = ({ formData }) => {
             </p>
           </div>
 
-          <div className="receipt-container col-md-6 p-4" style={{ borderRadius: '12px',width:'100%',backgroundImage:`url(${Booked_logo})` , backgroundSize:'25% 25%',backgroundPosition:'center',backgroundRepeat: 'no-repeat'}}>
+          <div className="p-4" style={{ borderRadius: '12px',width:'100%',backgroundImage:`url(${Booked_logo})` , backgroundSize:'20% 25%',backgroundPosition:'center',backgroundRepeat: 'no-repeat'}}>
             <h1 className="text-center" style={{ fontSize: '20px' }}>
               {localStorage.getItem('Type')}
             </h1>
