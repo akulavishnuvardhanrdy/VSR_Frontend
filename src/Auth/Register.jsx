@@ -29,7 +29,7 @@ const Register = () => {
       setError('');
       setSuccess('Registered Successfully Click Below to Login')
     } catch (err) {
-      const msg = err.response?.data?.error?.split(':')[2];
+      const msg = err.response?.data?.error?.split(':')[2].split(',')[0];
       if (msg.trim()==="email_1 dup key") {
         setError('Email already exists. Please use a different one.');
       } else{
