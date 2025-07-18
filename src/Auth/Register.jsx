@@ -26,7 +26,7 @@ const Register = () => {
     e.preventDefault();
     try {
       // const response = await axios.post('https://vsr-backend.onrender.com/addUser', registerData);
-      const response = await axios.post('/addUser', registerData);
+      const response = await axios.post(':4000/addUser', registerData);
       setError('');
       setSuccess('Registered Successfully Click Below to Login')
     } catch (err) {
