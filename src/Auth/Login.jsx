@@ -17,7 +17,7 @@ const LoginForm = () => {
     e.preventDefault();
     try {
       // const response = await axios.post('https://vsr-backend.onrender.com/login', loginData);
-      const response = await axios.post('/login', loginData);
+      const response = await axios.post('http://65.0.178.124:4000/login', loginData);
       const { token } = response.data;
       localStorage.setItem('jwtToken', token);
       setError('');

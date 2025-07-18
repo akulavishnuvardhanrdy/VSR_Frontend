@@ -31,7 +31,7 @@ const BookingForm = () => {
       //     'Authorization': `Bearer ${token}`  // Pass the token in the header
       //   }
       // });
-      const response = await axios.post('/booking', formData, {
+      const response = await axios.post('http://65.0.178.124:4000/booking', formData, {
         headers: {
           'Authorization': `Bearer ${token}`  // Pass the token in the header
         }
